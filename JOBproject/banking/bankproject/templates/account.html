@@ -1,0 +1,254 @@
+ {% load static %}
+ <!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>Form page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-finance-business.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+
+
+
+  </head>
+
+  <body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+    <div class="sub-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-xs-12">
+            <ul class="left-info">
+              <li><a href="#"><i class="fa fa-clock-o"></i>Mon-Fri 09:00am-06:00pm</a></li>
+              <li><a href="#"><i class="fa fa-phone"></i>090-080-0760</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="right-icons">
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="#"><i class="fa fa-behance"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+<!--    <header class="">-->
+<!--      <nav class="navbar navbar-expand-md">-->
+<!--        <div class="container">-->
+<!--          <a class="navbar-brand" href=""><h2></h2></a>-->
+<!--          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--          </button>-->
+<!--          <div class="collapse navbar-collapse" id="navbarResponsive">-->
+<!--            <ul class="navbar-nav ml-auto">-->
+<!--              <li class="nav-item">-->
+<!--                <a class="nav-link" href="/">Home-->
+<!--                  <span class="sr-only">(current)</span>-->
+<!--                </a>-->
+<!--              </li>-->
+<!--              <li class="nav-item">-->
+<!--                <a class="nav-link" href="login">Login</a>-->
+<!--              </li>-->
+<!--              <li class="nav-item">-->
+<!--                <a class="nav-link" href="register">Register</a>-->
+<!--              </li>-->
+<!--               <li class="nav-item dropdown">-->
+<!--        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--          Branches-->
+<!--        </a>-->
+<!--        <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--          <a class="dropdown-item" href="www.wikipedia.com">Thiruvanathapuram</a>-->
+<!--          <a class="dropdown-item" href="#">Kottayam</a>-->
+<!--          <a class="dropdown-item" href="#">Thrissur</a>-->
+<!--          <a class="dropdown-item" href="#">Ernakulam</a>-->
+<!--          <a class="dropdown-item" href="#">Kasargod</a>-->
+<!--        </div>-->
+<!--      </li>-->
+<!--            </ul>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </nav>-->
+<!--    </header>-->
+
+    <!-- Page Content -->
+<!--    <div class="page-heading header-text">-->
+      <div class="container">
+<!--        <div class="row">-->
+<!--          <div class="col-md-12">-->
+<!--            <h1>Form Center</h1>-->
+<!--            <span>feel free to Inform  us now!</span>-->
+<!--          </div>-->
+<!--        </div>-->
+
+          <div class="container">
+
+              <div class="title">Application Form</div>
+
+            <form  action="/account/" method="post" target="_self"  enctype="multipart/form-data" id="personForm" data-cities-url="{% url 'ajax_load_cities' %}">
+                   {% csrf_token %}
+              <div class="user-details">
+                <div class="input-box">
+                  <span class="details">Full Name</span>
+                  <input type="text" name="username" placeholder="Enter your name" required>
+              </div>
+              <div class="input-box">
+                  <span class="details">Date of birth</span>
+                  <input type="date" placeholder="Enter your DOB" required>
+              </div>
+              <div class="input-box">
+                  <span class="details">Age</span>
+                  <input type="text" placeholder="Enter your Age" >
+              </div>
+              <div class="input-box">
+                  <span class="details">Phone number</span>
+                  <input type="tel" name="phone" placeholder="Enter your phone number" required>
+              </div>
+              <div class="input-box">
+                  <span class="details">Email ID</span>
+                  <input type="email" name="email" placeholder="Enter your email" required>
+              </div>
+              </div>
+              <div class="gender-details">
+                <span class="gender-title">Gender</span>
+                <div class="category">
+                  <label for="male">Male</label>
+                  <input type="radio" id="male" name="gender" value="Male">
+                  <label for="female">Female</label>
+                   <input type="radio" id="female" name="gender" value="Female">
+                  <label for="others">Others</label>
+                  <input type="radio" id="others" name="gender" value="Others">
+                </div>
+              </div>
+              <div>
+                  <h6>Address</h6>
+                    <label for="address"></label>
+                    <textarea name="address" id="address" cols="30" rows="5"></textarea><br>
+              </div>
+
+              <div>
+
+                    <h6>Select Region</h6>
+                     {{ form.as_p }}
+              </div>
+              <div>
+                <h6>Account Type</h6>
+                  <label for="account"></label>
+                        <select name ="account" id="account">
+                         <option value="saving">Saving account</option>
+                         <option value="current">Current account</option>
+                         <option value="NRI">NRI account</option>
+                         <option value="fixed">Fixed account</option>
+                         <option value='' selected>Select an Account</option>
+                        </select>
+              </div>
+              <div>
+                <h6>Materials Needed</h6>
+                    <label for="Creditcard">Credit Card</label>
+                     <input type="checkbox" id="creditcard" name="credit">
+                     <label for="debitcard">Debit Card</label>
+                      <input type="checkbox" id="debitcard" name="debit">
+                     <label for="Cheque">Cheque Book</label>
+                     <input type="checkbox" id="Cheque" name="cheque">
+              </div>
+              <div>
+                <input type="submit" name="submit" value="Submit">
+              </div>
+              <div class="button">
+                <input type="submit" value="Log out" formtarget="_self">
+              </div>
+            </form>
+          </div>
+      </div>
+
+    <div class="sub-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p>Copyright &copy; 2020 Financial Business Co., Ltd.
+            
+            - Design: <a rel="nofollow noopener" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Additional Scripts -->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+    <script src="{% static 'assets/js/owl.js' %}"></script>
+    <script src="{% static 'assets/js/slick.js' %}"></script>
+    <script src="{% static 'assets/js/accordions.js' %}"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $("#district").change(function () {
+        const url = $("#personForm").attr("data-cities-url");  // get the url of the `load_cities` view
+        const district = $(this).val();  // get the selected country ID from the HTML input
+
+        $.ajax({                       // initialize an AJAX request
+            url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+            data: {
+                'district': district      // add the country id to the GET parameters
+            },
+            success: function (data) {   // `data` is the return of the `load_cities` view function
+                $("#city").html(data);  // replace the contents of the city input with the data that came from the server
+                /*
+
+                let html_data = '<option value="">---------</option>';
+                data.forEach(function (city) {
+                    html_data += `<option value="${city}">${city.name}</option>`
+                });
+                console.log(html_data);
+                $("#city").html(html_data);
+
+                */
+            }
+        });
+
+    });
+</script>
+
+    <script language = "text/Javascript"> 
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+    </script>
+
+  </body>
+</html>
+
+
